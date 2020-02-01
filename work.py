@@ -36,6 +36,10 @@ kids = Menu("kids",{
   'chicken nuggets': 6.50, 'fusilli with wild mushrooms': 12.00, 'apple juice': 3.00
 },1100,2100)
 
+arepas_menu = Menu("Take a’ Arepa",{
+  'arepa pabellon': 7.00, 'pernil arepa': 8.50, 'guayanes arepa': 8.00, 'jamon arepa': 7.50
+},1000,2000)
+
 print(brunch)
 print(early_bird)
 print(dinner)
@@ -69,4 +73,13 @@ print(flagship_store.available_menus(1200))
 print(flagship_store.available_menus(1700))
 
 class Business:
-    
+    def __init__(self,name,franchises):
+        self.name = name
+        self.franchises = franchises
+
+basta = Business("Basta Fazoolin' with my Heart",[flagship_store,new_installment])
+
+arepas_place = Franchise("189 Fitzgerald Avenue",[arepas_menu])
+
+arepa = Business("Take a' Arepa",[arepas_place])
+print(arepa.franchises[0].menus[0])
